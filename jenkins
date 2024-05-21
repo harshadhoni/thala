@@ -1,0 +1,22 @@
+pipeline {
+    agent any 
+    
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('git') {
+            steps {
+                git 'https://github.com/harshadhoni/thala.git'
+            }
+        }
+	stage('shell') {
+            steps {
+                sh 'bash thala.sh'
+            }
+        }
+    }
+}
+
